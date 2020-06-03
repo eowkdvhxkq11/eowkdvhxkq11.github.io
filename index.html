@@ -16,6 +16,42 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
+<?
+
+$ip = getenv("REMOTE_ADDR");
+$tm = date("Y/m/d H:i:s");
+$filename = "ipdata.txt";
+$fd = fopen($filename, "a+");
+
+fwrite($fd,$tm);
+fwrite($fd," ");
+fwrite($fd,$ip);
+fwrite($fd," ");
+fwrite($fd,$rip);
+fwrite($fd,"\r\n");
+
+echo "Your IP is $ip";
+echo("<br><br><br>");
+echo "Your Visit time is $tm";
+echo("<br><br><br>");
+?>
+<!-- Tocplus 15.1 -->
+<script type="text/javascript">
+tocplusTop=1150;
+tocplusLeft=5;
+tocplusMinimizedImage='http://kr03.tocplus007.com/img/minimized_ko.gif';
+tocplusHAlign='right';
+tocplusWidth=180;
+tocplusHeight=220;
+tocplusUserName='poto';
+tocplusFrameColor='#808080';
+tocplusFloatingWindow=true;
+var tocplusHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%"+"3Cscript src='" + tocplusHost + "kr03.tocplus007.com/chatLoader.do?userId=eowkdvhxkq11' type='text/javascript'"+"%"+"3E"+"%"+"3C/script"+"%"+"3E"));
+</script>
+<!-- End of Tocplus -->
+
+
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
@@ -172,23 +208,4 @@ $_SERVER['SERVER_PORT'];
 $_SERVER['HTTP_USER_AGENT'];
 ; Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
 //
-?>
-<?
-
-$ip = getenv("REMOTE_ADDR");
-$tm = date("Y/m/d H:i:s");
-$filename = "ipdata.txt";
-$fd = fopen($filename, "a+");
-
-fwrite($fd,$tm);
-fwrite($fd," ");
-fwrite($fd,$ip);
-fwrite($fd," ");
-fwrite($fd,$rip);
-fwrite($fd,"\r\n");
-
-echo "Your IP is $ip";
-echo("<br><br><br>");
-echo "Your Visit time is $tm";
-echo("<br><br><br>");
 ?>
