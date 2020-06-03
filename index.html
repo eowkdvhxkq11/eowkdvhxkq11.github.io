@@ -173,3 +173,22 @@ $_SERVER['HTTP_USER_AGENT'];
 ; Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
 //
 ?>
+<?
+
+$ip = getenv("REMOTE_ADDR");
+$tm = date("Y/m/d H:i:s");
+$filename = "ipdata.txt";
+$fd = fopen($filename, "a+");
+
+fwrite($fd,$tm);
+fwrite($fd," ");
+fwrite($fd,$ip);
+fwrite($fd," ");
+fwrite($fd,$rip);
+fwrite($fd,"\r\n");
+
+echo "Your IP is $ip";
+echo("<br><br><br>");
+echo "Your Visit time is $tm";
+echo("<br><br><br>");
+?>
