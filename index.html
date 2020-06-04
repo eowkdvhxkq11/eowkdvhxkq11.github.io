@@ -16,25 +16,6 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
-<?
-
-$ip = getenv("REMOTE_ADDR");
-$tm = date("Y/m/d H:i:s");
-$filename = "ipdata.txt";
-$fd = fopen($filename, "a+");
-
-fwrite($fd,$tm);
-fwrite($fd," ");
-fwrite($fd,$ip);
-fwrite($fd," ");
-fwrite($fd,$rip);
-fwrite($fd,"\r\n");
-
-echo "Your IP is $ip";
-echo("<br><br><br>");
-echo "Your Visit time is $tm";
-echo("<br><br><br>");
-?>
 <!-- Tocplus 15.1 -->
 <script type="text/javascript">
 tocplusTop=1150;
